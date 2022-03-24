@@ -1,0 +1,20 @@
+.Cell {
+  border: 1px solid grey;
+  border-width: 1px 1px 0 0;
+  width: var(--cellSize);
+  height: var(--cellSize);
+  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.Cell::after {
+  counter-reset: x var(--x) y var(--y);
+  content: counter(x) '-' counter(y);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
